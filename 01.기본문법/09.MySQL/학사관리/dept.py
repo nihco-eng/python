@@ -1,0 +1,28 @@
+import os
+from db import *
+
+def menuDept() :
+    os.system('cls')
+    while True :
+        print('*' *11, '학과관리', '*'*11)
+        print('-'*34)
+        print('1.등록|2.목록|3.수정|0.종료')
+        print('-'*34)
+        menu = input('메뉴선택>')
+        if menu == '0' :
+            break
+        elif menu == '3' :
+            dcode = inputCode('학과코드>', 1)
+            dept = readDept(dcode)
+            dname = input(f'학과이름:{dept.dname}>')
+            if dname != '' : dept.dname = dname 
+            updateDept(dept)
+
+        elif menu == '2' :
+            list = listDept()
+            for dept in list :
+                print(f'학과코드:{dept.dcode}, 학과이름:{dept.dname}')
+        elif menu == '1' :
+            dname = input('학과이름>')
+            if dname  == '' : continue
+            insertDept(dname)

@@ -1,0 +1,10 @@
+print('여탕에 입장가능?')
+age = int(input('나이>'))
+gender = input('성별>')
+result = (gender == '여자') or (gender == '남자' and age < 4)
+print(f'결과는 {result} 입니다.')
+
+print('-'*50)
+print('남탕에 입장가능?')
+result1 = (gender == '남자') or (gender == '여자' and age < 3)
+print(f'결과는 {result1} 입니다.')
