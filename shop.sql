@@ -46,3 +46,6 @@ select * from view_sale where name like '%%';
 drop view view_sale;
 
 select * from hollys;
+
+select * from gmarket;
+select * from books;
